@@ -2,13 +2,17 @@
   "name": "rclnodejs-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "rclnodejs": "^0.22.2"
+  },
+  "devDependencies": {
+    "electron": "^25.3.2"
   }
 }
