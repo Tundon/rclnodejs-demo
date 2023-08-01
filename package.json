@@ -11,8 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "rclnodejs": "^0.22.2",
-    "ts-node": "^10.9.1"
+    "rclnodejs": "^0.22.2"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.2.1",
