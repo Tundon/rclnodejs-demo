@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^11.0.0",
-    "rclnodejs": "^0.22.2"
+    "rclnodejs": "^0.22.2",
+    "yaml": "^2.3.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.2.1",

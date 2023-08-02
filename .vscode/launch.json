@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ros.ts nodes",
+      "name": "ros.ts",
       "request": "launch",
       "type": "node",
       "skipFiles": [
@@ -14,7 +14,7 @@
       "program": "${workspaceFolder}/bin/ros.ts",
       "runtimeExecutable": "ts-node",
       "args": [
-        "nodes", "list"
+        "monitor", "/panda_arm_controller"
       ]
     },
     {
