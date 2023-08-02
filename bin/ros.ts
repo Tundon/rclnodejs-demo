@@ -11,6 +11,40 @@ const nodes = program
   .description("Commands related to ROS2 nodes");
 nodes.command("list").description("List all nodes").action(list);
 
+const topic = program
+  .command("topic")
+  .description("Commands related to ROS2 topics");
+topic
+  .command("list")
+  .description("List all topics")
+  .action(async () => {
+    const node = createNode();
+    await delay(500);
+    let topicNamesAndTypes = node.getTopicNamesAndTypes();
+    console.log(topicNamesAndTypes);
+  });
+
+const action = program
+  .command("action")
+  .description("Commands related to ROS2 action");
+action
+  .command("list")
+  .description("List all actions")
+  .action(async () => {
+    const node = createNode();
+    await delay(500);
+    const nodeNamesAndNamespaces = node.getNodeNamesAndNamespaces();
+    nodeNamesAndNamespaces.forEach((nameAndNamespace) => {
+      console.log(
+        rcl.getActionClientNamesAndTypesByNode(
+          node,
+          nameAndNamespace.name,
+          nameAndNamespace.namespace
+        )
+      );
+    });
+  });
+
 program
   .command("monitor [topics...]")
   .option("-e, --exclude <topics...>")
