@@ -13,16 +13,22 @@ nodes.command("list").description("List all nodes").action(list);
 
 program
   .command("monitor [topics...]")
+  .option("-e, --exclude <topics...>")
   .description(
     "Monitor topic messages. If topics omitted, it will monitor messages for all topics"
   )
-  .action(async (topics: string[]) => {
+  .action(async (topics: string[], options: { exclude?: string[] }) => {
     const node = createNode();
     await delay(500);
     let topicNamesAndTypes = node.getTopicNamesAndTypes();
     if (topics.length > 0) {
       topicNamesAndTypes = topicNamesAndTypes.filter((x) =>
         topics.some((topic) => x.name.includes(topic))
+      );
+    }
+    if (options.exclude) {
+      topicNamesAndTypes = topicNamesAndTypes.filter((x) =>
+        options.exclude.every((topic) => !x.name.includes(topic))
       );
     }
     console.log(

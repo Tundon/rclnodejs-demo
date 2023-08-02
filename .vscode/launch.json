@@ -14,7 +14,7 @@
       "program": "${workspaceFolder}/bin/ros.ts",
       "runtimeExecutable": "ts-node",
       "args": [
-        "monitor", "/panda_arm_controller"
+        "monitor", "/a", "/b", "--", "/c"
       ]
     },
     {
