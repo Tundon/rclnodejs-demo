@@ -1,0 +1,34 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ros.ts nodes",
+      "request": "launch",
+      "type": "node",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/bin/ros.ts",
+      "runtimeExecutable": "ts-node",
+      "args": [
+        "nodes", "list"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Script",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${file}",
+      "runtimeExecutable": "ts-node",
+      // "outFiles": [
+      //   "${workspaceFolder}/**/*.js"
+      // ]
+    }
+  ]
+}
