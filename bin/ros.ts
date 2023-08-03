@@ -34,15 +34,16 @@ action
     const node = createNode();
     await delay(500);
     const nodeNamesAndNamespaces = node.getNodeNamesAndNamespaces();
+    const result: rcl.NamesAndTypesQueryResult[] = [];
     nodeNamesAndNamespaces.forEach((nameAndNamespace) => {
-      console.log(
-        rcl.getActionClientNamesAndTypesByNode(
-          node,
-          nameAndNamespace.name,
-          nameAndNamespace.namespace
-        )
-      );
+      result.push(...rcl.getActionClientNamesAndTypesByNode(
+        node,
+        nameAndNamespace.name,
+        nameAndNamespace.namespace
+      ) as any);
     });
+    
+    console.log(inspect(result, { colors: true, compact: true }));
   });
 
 program
