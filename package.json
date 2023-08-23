@@ -12,6 +12,7 @@
   "dependencies": {
     "commander": "^11.0.0",
     "rclnodejs": "^0.22.2",
+    "serialport": "^11.0.1",
     "yaml": "^2.3.1"
   },
   "devDependencies": {
